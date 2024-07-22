@@ -2,15 +2,23 @@
 
 
 
-WATT ELECTRICAL Company Registration App
+WATT ELECTRICAL Company Registration App Project.
+
+
 Overview
-The WATT ELECTRICAL Company Registration App is designed to manage employee records for the company. This application allows the admin to securely log in and perform CRUD operations on employee data. It provides insights into active employees, deactivated employees, and those who have moved to other branches within the company.
+The WATT ELECTRICAL Company Registration App is designed to manage employee records for the company.
+This application allows the admin to securely log in and perform CRUD operations on employee data.
+It provides insights into active employees, deactivated employees, and those who have moved to other branches within the company.
+
+
 
 Features
 Admin Access Only: Only the admin can log in, add, update, and delete employee records.
 Employee Status: View active employees, deactivated employees, and those who have moved to other branches.
 Responsive Design: The app is fully responsive, ensuring a seamless experience across all devices.
 Built-in Security: Designed with a focus on secure access and management.
+
+
 Technologies Used
 React.js: JavaScript library for building user interfaces.
 JavaScript: Core language for application logic.
