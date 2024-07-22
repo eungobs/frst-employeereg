@@ -1,0 +1,118 @@
+/* src/ActiveEmployees.css */
+.active-employees {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color:grey;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center buttons in header */
+  margin-bottom: 20px;
+}
+
+header button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.employee-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.employee-card {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.employee-card img {
+  width: 120px; /* Set a fixed width for the image */
+  height: 120px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the area nicely */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.employee-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.employee-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .active-employees {
+    padding: 15px;
+  }
+
+  header button {
+    font-size: 14px;
+  }
+
+  .employee-card {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .active-employees {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .employee-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .employee-card {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .employee-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

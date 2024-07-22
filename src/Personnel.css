@@ -1,0 +1,99 @@
+/* src/Personnel.css */
+
+.personnel {
+  padding: 20px;
+  text-align: center;
+  background-image: url('https://img.freepik.com/free-photo/colorful-bar-graph-orange-graph-pink-background_23-2147892252.jpg?t=st=1721544671~exp=1721548271~hmac=caac5bc1a8f465e01fe6e03d31aed1214881053d512e7029900dbc2d012bd509&w=826');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.personnel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.personnel h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.personnel .personnel-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.personnel .person {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.personnel .person.moved {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.personnel .person.terminated {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.personnel button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .personnel .personnel-list {
+    padding: 0 10px;
+  }
+
+  .personnel .person {
+    font-size: 14px;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  .personnel button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .personnel .person {
+    font-size: 12px;
+    padding: 6px;
+    margin: 4px;
+  }
+
+  .personnel button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

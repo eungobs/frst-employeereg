@@ -1,0 +1,166 @@
+/* Base styles */
+.login {
+  padding: 20px;
+  text-align: center;
+  background-image: url('https://img.freepik.com/free-vector/gradient-energy-logo-design_52683-104246.jpg?t=st=1721393292~exp=1721396892~hmac=80c19849d38133d77dea119404da9d4499d027b38d9b32de4b1071b03c6bd4b9&w=740');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh; 
+  border: 30px solid yellow;
+}
+
+.signup-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.login h1 {
+  font-size: 3em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.login input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login .links {
+  margin-top: 20px;
+}
+
+.login .links button {
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: #4CAF50;
+  cursor: pointer;
+}
+
+.login .links button:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.signup-link:focus {
+  outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .login h1 {
+    font-size: 2.5em;
+  }
+
+  .login input {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .login button {
+    padding: 10px 15px;
+  }
+
+  .signup-link {
+    top: 5px;
+    left: 5px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 425px) {
+  .login {
+    padding: 10px;
+  }
+
+  .login h1 {
+    font-size: 2em;
+  }
+
+  .login input {
+    width: 100%;
+    max-width: none;
+    padding: 8px;
+  }
+
+  .login button {
+    padding: 8px 10px;
+  }
+
+  .signup-link {
+    font-size: 0.8em;
+  }
+}
+
+/* iPhone XR specific styles */
+@media (max-width: 414px) and (max-height: 896px) and (orientation: portrait) {
+  .login h1 {
+    font-size: 2em;
+  }
+
+  .login input {
+    width: 90%;
+    max-width: none;
+    padding: 8px;
+  }
+
+  .login button {
+    padding: 8px 10px;
+  }
+
+  .signup-link {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
+  .login h1 {
+    font-size: 2.5em;
+  }
+
+  .login input {
+    width: 80%;
+    max-width: none;
+    padding: 10px;
+  }
+
+  .login button {
+    padding: 10px 15px;
+  }
+
+  .signup-link {
+    font-size: 0.9em;
+  }
+}

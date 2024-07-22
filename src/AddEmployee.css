@@ -1,0 +1,56 @@
+/* src/AddEmployee.css */
+.add-employee {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: gray;
+}
+
+.add-employee h2 {
+  text-align: center;
+}
+
+.add-employee form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-employee form div {
+  margin-bottom: 15px;
+}
+
+.add-employee label {
+  margin-bottom: 5px;
+}
+
+.add-employee input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.add-employee input[type="file"] {
+  padding: 3px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .add-employee {
+    padding: 10px;
+  }
+
+  .add-employee input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .add-employee button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
