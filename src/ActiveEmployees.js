@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ActiveEmployees.css';
 
 const employees = [
@@ -16,6 +16,19 @@ const employees = [
 ];
 
 function ActiveEmployees({ navigate }) {
+  
+  useEffect(() => {
+    // Initialize local storage with employees data if not already set
+    initializeLocalStorage();
+  }, []);
+
+  const initializeLocalStorage = () => {
+    const storedEmployees = localStorage.getItem('employees');
+    if (!storedEmployees) {
+      localStorage.setItem('employees', JSON.stringify(employees));
+    }
+  };
+
   return (
     <div className="active-employees">
       <header>

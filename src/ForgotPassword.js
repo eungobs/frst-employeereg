@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import './ForgotPassword.css';
 
 function ForgotPassword({ navigate }) {
-  const [email, setEmail] = useState('');
+  // Retrieve email from local storage if it exists
+  const savedEmail = JSON.parse(localStorage.getItem('forgotPasswordEmail')) || '';
+  const [email, setEmail] = useState(savedEmail);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your password reset logic here
+    // Save email to local storage as a JSON string
+    localStorage.setItem('forgotPasswordEmail', JSON.stringify(email));
+    
     alert('Password reset link sent to your email');
   };
 

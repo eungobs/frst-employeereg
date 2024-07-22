@@ -46,6 +46,7 @@ function Login({ navigate }) {
       <div className="links">
         <button onClick={() => navigate('change-password')}>Change password?</button>
         <button onClick={() => navigate('forgot-password')}>Forgot password?</button>
+        <button onClick={() => navigate('logout')}>Logout</button> {/* Added Logout button */}
       </div>
     </div>
   );

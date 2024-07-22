@@ -36,7 +36,9 @@ function Search({ navigate }) {
       />
       <button onClick={handleSearch}>Search</button>
       <div className="employee-list">
-        {filteredEmployees.length > 0 ? (
+        {searchTerm && filteredEmployees.length === 0 ? (
+          <p>No results found</p>
+        ) : (
           filteredEmployees.map(employee => (
             <div key={employee.id} className="employee-card">
               <img src={employee.imageUrl} alt={`${employee.name}`} />
@@ -45,8 +47,6 @@ function Search({ navigate }) {
               <p>Ref Number: {employee.refNumber}</p>
             </div>
           ))
-        ) : (
-          <p>No results found</p>
         )}
       </div>
       <button onClick={() => navigate('active-employees')}>Back</button>

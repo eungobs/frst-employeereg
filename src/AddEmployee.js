@@ -53,6 +53,10 @@ function AddEmployee({ navigate }) {
     }
 
     setError('');
+    
+    // Save employee data to local storage
+    saveToLocalStorage(employee);
+    
     // Add employee to the list (this can be replaced with an API call)
     alert('Employee added successfully!');
     navigate('active-employees');
@@ -71,6 +75,12 @@ function AddEmployee({ navigate }) {
   const validateIDNumber = (idNumber) => {
     const re = /^[0-9]{13}$/;
     return re.test(idNumber);
+  };
+
+  const saveToLocalStorage = (employee) => {
+    let employees = JSON.parse(localStorage.getItem('employees')) || [];
+    employees.push(employee);
+    localStorage.setItem('employees', JSON.stringify(employees));
   };
 
   return (
@@ -99,3 +109,4 @@ function AddEmployee({ navigate }) {
 }
 
 export default AddEmployee;
+

@@ -9,6 +9,7 @@ import EditProfile from './EditProfile';
 import Personnel from './Personnel';
 import Delete from './Delete';
 import Search from './Search';
+import Logout from './Logout'; // Import the Logout component
 import './App.css';
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         return <ChangePassword navigate={setCurrentPage} />;
       case 'forgot-password':
         return <ForgotPassword navigate={setCurrentPage} />;
+      case 'logout': // Handle the logout page
+        return <Logout navigate={setCurrentPage} />;
       default:
         return <Login navigate={setCurrentPage} loginAsAdmin={loginAsAdmin} />; // Default to 'login' page
     }
@@ -50,4 +53,3 @@ function App() {
 }
 
 export default App;
-

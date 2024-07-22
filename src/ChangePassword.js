@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChangePassword.css';
 
-function ChangePassword({ navigate }) { // Added navigate as a prop
+function ChangePassword({ navigate }) {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -12,8 +12,17 @@ function ChangePassword({ navigate }) { // Added navigate as a prop
       alert('New passwords do not match');
       return;
     }
+    
+    // Save the password change details to local storage
+    savePasswordChange({ currentPassword, newPassword });
+    
     // Add your password change logic here
     alert('Password changed successfully');
+  };
+
+  const savePasswordChange = (passwords) => {
+    // Store the passwords in local storage (you can use more secure methods in a real application)
+    localStorage.setItem('passwordChange', JSON.stringify(passwords));
   };
 
   return (
