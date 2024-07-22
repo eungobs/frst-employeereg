@@ -1,4 +1,4 @@
-/* General styling for the logout page */
+/* Styling for the logout page */
 .logout {
   display: flex;
   flex-direction: column;
@@ -7,10 +7,9 @@
   height: 100vh; /* Full height of the viewport */
   background-color: #f4f4f4; /* Light gray background */
   color: #333; /* Dark text color */
-  font-family: Arial, sans-serif; /* Use a clean font */
-  padding: 20px; /* Add padding to avoid content touching edges */
-  box-sizing: border-box; /* Ensure padding is included in the height and width */
-}
+  font-family: Arial, sans-serif; /* clean font */
+  padding: 20px; 
+  box-sizing: border-box; 
 
 /* Styling for the heading */
 .logout h2 {
@@ -18,7 +17,7 @@
   margin: 0;
   padding: 20px;
   text-align: center;
-  color: #4CAF50; /* Green text color */
+  color: #4CAF50; 
 }
 
 /* Styling for the status message */

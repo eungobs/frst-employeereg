@@ -57,7 +57,7 @@ function AddEmployee({ navigate }) {
     // Save employee data to local storage
     saveToLocalStorage(employee);
     
-    // Add employee to the list (this can be replaced with an API call)
+   
     alert('Employee added successfully!');
     navigate('active-employees');
   };
