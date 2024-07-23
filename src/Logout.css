@@ -4,44 +4,67 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full height of the viewport */
-  background-color: #f4f4f4; /* Light gray background */
-  color: #333; /* Dark text color */
-  font-family: Arial, sans-serif; /* clean font */
-  padding: 20px; 
-  box-sizing: border-box; 
-
-/* Styling for the heading */
-.logout h2 {
-  font-size: 1.5em;
-  margin: 0;
-  padding: 20px;
+  height: 100vh;
+  background-color: #f4f4f4;
   text-align: center;
-  color: #4CAF50; 
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Styling for the status message */
-.logout .status {
-  font-size: 1.2em;
-  color: #666; /* Gray text color for status message */
-  text-align: center; /* Center text for better alignment */
+.logout h2 {
+  margin-bottom: 20px;
+  font-size: 5vw;
+  color: #333;
 }
 
-/* Styling for the button */
 .logout button {
-  margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  font-size: 4vw;
+  color: #fff;
+  background-color: #007bff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-/* Hover effect for the button */
 .logout button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+  .logout h2 {
+    font-size: 2vw;
+  }
+
+  .logout button {
+    font-size: 1.5vw;
+    padding: 10px 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logout h2 {
+    font-size: 1.5vw;
+  }
+
+  .logout button {
+    font-size: 1.2vw;
+    padding: 12px 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logout h2 {
+    font-size: 1.2vw;
+  }
+
+  .logout button {
+    font-size: 1vw;
+    padding: 14px 60px;
+  }
 }
 
 /* Responsive adjustments for smaller screens */
