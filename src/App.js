@@ -13,8 +13,7 @@ import Logout from './Logout'; // Import the Logout component
 import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('login'); // Initial page set to 'login'
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [currentPage, setCurrentPage] = useState('login'); 
 
   const loginAsAdmin = (status) => {
     setIsAdmin(status);
