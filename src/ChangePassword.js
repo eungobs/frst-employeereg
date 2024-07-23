@@ -21,7 +21,7 @@ function ChangePassword({ navigate }) {
   };
 
   const savePasswordChange = (passwords) => {
-    // Store the passwords in local storage (you can use more secure methods in a real application)
+    // Store the passwords in local storage 
     localStorage.setItem('passwordChange', JSON.stringify(passwords));
   };
 

@@ -18,7 +18,7 @@ const employees = [
 function ActiveEmployees({ navigate }) {
   
   useEffect(() => {
-    // Initialize local storage with employees data if not already set
+    // Initialize local storage with employees data 
     initializeLocalStorage();
   }, []);
 

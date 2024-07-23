@@ -9,13 +9,13 @@
 
 @keyframes changeBackground {
   0% {
-    background-color: #ffcccc; /* First color */
+    background-color: #ffcccc; 
   }
   50% {
-    background-color: #ccffcc; /* Second color */
+    background-color: #ccffcc; 
   }
   100% {
-    background-color: #ffcccc; /* First color again to complete the loop */
+    background-color: #ffcccc; 
   }
 }
 

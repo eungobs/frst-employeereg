@@ -33,7 +33,7 @@ function EditProfile({ navigate }) {
     }
 
     setError('');
-    // Save profile changes (this can be replaced with an API call)
+    
     alert('Profile updated successfully!');
     navigate('active-employees');
   };
