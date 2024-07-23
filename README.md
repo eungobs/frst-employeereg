@@ -1,3 +1,5 @@
+![Untitled (4)](https://github.com/user-attachments/assets/13898925-8664-44fa-8b75-5f4e72f60874)
+
 # Employee Registration App Project
 
 Overview
