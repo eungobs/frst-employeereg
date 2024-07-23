@@ -9,47 +9,62 @@ import EditProfile from './EditProfile';
 import Personnel from './Personnel';
 import Delete from './Delete';
 import Search from './Search';
-import Logout from './Logout'; // Import the Logout component
+import Logout from './Logout';
+import Loader from './Loader'; 
 import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('login'); // Initial page set to 'login'
+  const [currentPage, setCurrentPage] = useState('login'); 
   const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(false); // State for the loader
 
   const loginAsAdmin = (status) => {
     setIsAdmin(status);
   };
 
+  const navigate = (page) => {
+    setLoading(true);
+    setTimeout(() => {
+      setCurrentPage(page);
+      setLoading(false);
+    }, 500); // Simulating a loading delay
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'signup':
-        return <Signup navigate={setCurrentPage} />;
+        return <Signup navigate={navigate} />;
       case 'login':
-        return <Login navigate={setCurrentPage} loginAsAdmin={loginAsAdmin} />;
+        return <Login navigate={navigate} loginAsAdmin={loginAsAdmin} />;
       case 'active-employees':
-        return <ActiveEmployees navigate={setCurrentPage} />;
+        return <ActiveEmployees navigate={navigate} />;
       case 'add-employee':
-        return <AddEmployee navigate={setCurrentPage} />;
+        return <AddEmployee navigate={navigate} />;
       case 'edit-profile':
-        return <EditProfile navigate={setCurrentPage} />;
+        return <EditProfile navigate={navigate} />;
       case 'personnel':
-        return <Personnel navigate={setCurrentPage} />;
+        return <Personnel navigate={navigate} />;
       case 'delete':
-        return <Delete navigate={setCurrentPage} isAdmin={isAdmin} loginAsAdmin={loginAsAdmin} />;
+        return <Delete navigate={navigate} isAdmin={isAdmin} loginAsAdmin={loginAsAdmin} />;
       case 'search':
-        return <Search navigate={setCurrentPage} />;
+        return <Search navigate={navigate} />;
       case 'change-password':
-        return <ChangePassword navigate={setCurrentPage} />;
+        return <ChangePassword navigate={navigate} />;
       case 'forgot-password':
-        return <ForgotPassword navigate={setCurrentPage} />;
-      case 'logout': // Handle the logout page
-        return <Logout navigate={setCurrentPage} />;
+        return <ForgotPassword navigate={navigate} />;
+      case 'logout':
+        return <Logout navigate={navigate} />;
       default:
-        return <Login navigate={setCurrentPage} loginAsAdmin={loginAsAdmin} />; // Default to 'login' page
+        return <Login navigate={navigate} loginAsAdmin={loginAsAdmin} />;
     }
   };
 
-  return <div className="App">{renderPage()}</div>;
+  return (
+    <div className="App">
+      {loading && <Loader />}
+      {renderPage()}
+    </div>
+  );
 }
 
 export default App;
