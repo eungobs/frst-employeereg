@@ -1,4 +1,5 @@
-Employee Registration App Project
+![Untitled (9)](https://github.com/user-attachments/assets/263d67f2-edf4-4bce-9ded-83693d178d25)
+#Employee Registration App Project
 Overview
 
 The Teekga ELECTRICAL Company Registration App is designed to manage employee records for the company. This application allows the admin to securely log in and perform CRUD operations on employee data. It provides insights into active employees, deactivated employees, and those who have moved to other branches within the company.
