@@ -15,11 +15,9 @@ import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('login'); 
-<<<<<<< HEAD
+
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(false); // State for the loader
-=======
->>>>>>> a48820b0d33afdba90799d8c7a28299fb1053f51
 
   const loginAsAdmin = (status) => {
     setIsAdmin(status);
