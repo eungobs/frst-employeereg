@@ -1,7 +1,9 @@
+/* Global Styles */
 .App {
   text-align: center;
 }
 
+/* Logo Animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,6 +15,16 @@
   }
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Styles */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,7 +35,18 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-/* src/App.css */
+
+/* Link Styles */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.App-link:hover {
+  text-decoration: underline;
+}
+
+/* Delete Component Styles */
 .delete {
   padding: 20px;
   text-align: center;
@@ -50,18 +73,110 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-
-.App-link {
-  color: #61dafb;
+.delete button:hover {
+  background-color: darkred;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media Queries for Responsiveness */
+
+/* Extra Small Devices (320px and down) */
+@media only screen and (max-width: 320px) {
+  .App-logo {
+    height: 30vmin;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+}
+
+/* Small Devices (321px to 420px) */
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .App-logo {
+    height: 35vmin;
+  }
+
+  .App-header {
+    font-size: calc(9px + 2vmin);
+  }
+}
+
+/* Small Devices (421px to 480px) */
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+  .App-logo {
+    height: 37vmin;
+  }
+
+  .App-header {
+    font-size: calc(10px + 2vmin);
+  }
+}
+
+/* Small Devices (481px to 500px) */
+@media only screen and (min-width: 481px) and (max-width: 500px) {
+  .App-logo {
+    height: 38vmin;
+  }
+
+  .App-header {
+    font-size: calc(11px + 2vmin);
+  }
+}
+
+/* Small Devices (501px to 540px) */
+@media only screen and (min-width: 501px) and (max-width: 540px) {
+  .App-logo {
+    height: 39vmin;
+  }
+
+  .App-header {
+    font-size: calc(12px + 2vmin);
+  }
+}
+
+/* Small Devices (541px to 600px) */
+@media only screen and (min-width: 541px) and (max-width: 600px) {
+  .App-logo {
+    height: 40vmin;
+  }
+
+  .App-header {
+    font-size: calc(13px + 2vmin);
+  }
+}
+
+/* Medium Devices (Tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .App-logo {
+    height: 45vmin;
+  }
+
+  .App-header {
+    font-size: calc(14px + 2vmin);
+  }
+}
+
+/* Large Devices (Desktops, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .App-logo {
+    height: 50vmin;
+  }
+
+  .App-header {
+    font-size: calc(15px + 2vmin);
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .App-logo {
+    height: 55vmin;
+  }
+
+  .App-header {
+    font-size: calc(16px + 2vmin);
   }
 }

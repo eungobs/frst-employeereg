@@ -4,6 +4,10 @@ import './Personnel.css';
 function Personnel({ navigate }) {
   return (
     <div className="personnel">
+      <video autoPlay loop muted className="background-video">
+        <source src="https://videocdn.cdnpk.net/videos/9bd83cd0-f80e-4355-8527-606858b07643/horizontal/previews/clear/large.mp4?token=exp=1721479253~hmac=cf005f8c8b9c9d1195a5963fe6aee01a471b2f7c5c9f6d9a24ca5955220c8aa2" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="content">
         <h2>Company Personnel</h2>
         <div className="personnel-list">

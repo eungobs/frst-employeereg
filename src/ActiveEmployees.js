@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './ActiveEmployees.css';
 
 const employees = [
@@ -12,21 +12,17 @@ const employees = [
   { id: 8, name: 'Andrew Majola', position: 'Accountant', imageUrl: 'https://img.freepik.com/free-photo/close-up-smiley-man-with-glasses_23-2149009406.jpg?t=st=1721468609~exp=1721472209~hmac=0bfa066a7f85a349ffe793e22f631e401428e5c13b96860084514cdcb74737a0&w=826', refNumber: 'EMP008' },
   { id: 9, name: 'James Mohammad', position: 'Security', imageUrl: 'https://img.freepik.com/free-photo/happy-african-american-young-man-colorful-shirt-wearing-glasses-looking-camera-smiling-cheerfully_141793-108881.jpg?t=st=1721472783~exp=1721476383~hmac=7eba14da01a978b63c4d225527c06472452219e274e9545e99c8ec147473012c&w=826', refNumber: 'EMP009' },
   { id: 10, name: 'Patricia Nukeri', position: 'Cleaner', imageUrl: 'https://img.freepik.com/free-photo/young-african-american-woman-isolated-yellow-studio-background-facial-expression-beautiful-female-half-length-portrait-concept-human-emotions-facial-expression-standing-crossing-hands_155003-25191.jpg?t=st=1721472348~exp=1721475948~hmac=5b2a80f9423b51c51458bdd5d6980f13f2c75ab40c5a3675bfecad2bc3260e55&w=826', refNumber: 'EMP010' },
-  { id: 21, name: 'Elizabeth Ndzukule', position: 'Admin', imageUrl: 'https://img.freepik.com/free-photo/medium-shot-woman-working-as-lawyer_23-2151202448.jpg?t=st=1721581588~exp=1721585188~hmac=cab9851e871743021e413b40cabda0f32bbd07831f6138fb263353892540f0ef&w=826', refNumber: 'EMP021' }
 ];
 
 function ActiveEmployees({ navigate }) {
-  
-  useEffect(() => {
-    // Initialize local storage with employees data 
-    initializeLocalStorage();
-  }, []);
+  const handleLogout = () => {
+    // Clear authentication data or handle logout logic here
+    alert('Logged out successfully!');
+    navigate('login'); // Redirect to login page
+  };
 
-  const initializeLocalStorage = () => {
-    const storedEmployees = localStorage.getItem('employees');
-    if (!storedEmployees) {
-      localStorage.setItem('employees', JSON.stringify(employees));
-    }
+  const handleDelete = () => {
+    navigate('delete'); // Navigate to delete page
   };
 
   return (
@@ -34,10 +30,9 @@ function ActiveEmployees({ navigate }) {
       <header>
         <button onClick={() => navigate('add-employee')}>Add</button>
         <button onClick={() => navigate('edit-profile')}>Edit</button>
-        <button onClick={() => navigate('delete')}>Delete</button>
-        <button onClick={() => navigate('search')}>Search</button>
+        <button onClick={handleDelete}>Delete</button> {/* Navigate to delete page */}
         <button onClick={() => navigate('personnel')}>Personnel</button>
-        <button onClick={() => navigate('login')}>Back</button>
+        <button onClick={handleLogout}>Logout</button> {/* Logout button */}
       </header>
       <h2>Active Employees</h2>
       <div className="employee-list">
@@ -55,3 +50,4 @@ function ActiveEmployees({ navigate }) {
 }
 
 export default ActiveEmployees;
+

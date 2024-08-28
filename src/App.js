@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Login from './Login';
 import ChangePassword from './ChangePassword'; 
 import ForgotPassword from './ForgotPassword';
-import Signup from './Signup';
+import Admin from './Admin'; // Replaced Signup with Admin
 import ActiveEmployees from './ActiveEmployees';
 import AddEmployee from './AddEmployee';
 import EditProfile from './EditProfile';
@@ -15,11 +15,9 @@ import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('login'); 
-<<<<<<< HEAD
+
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(false); // State for the loader
-=======
->>>>>>> a48820b0d33afdba90799d8c7a28299fb1053f51
 
   const loginAsAdmin = (status) => {
     setIsAdmin(status);
@@ -35,8 +33,8 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'signup':
-        return <Signup navigate={navigate} />;
+      case 'admin': // Replaced 'signup' with 'admin'
+        return <Admin navigate={navigate} />;
       case 'login':
         return <Login navigate={navigate} loginAsAdmin={loginAsAdmin} />;
       case 'active-employees':

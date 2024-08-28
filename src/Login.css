@@ -10,7 +10,7 @@
   border: 30px solid yellow;
 }
 
-.signup-link {
+.admin-link {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -19,7 +19,7 @@
   font-weight: bold;
 }
 
-.signup-link:hover {
+.admin-link:hover {
   text-decoration: underline;
 }
 
@@ -65,7 +65,7 @@
   text-decoration: underline;
 }
 
-.signup-link {
+.admin-link {
   background: none;
   border: none;
   color: blue;
@@ -74,7 +74,7 @@
   font-size: inherit;
 }
 
-.signup-link:focus {
+.admin-link:focus {
   outline: none;
 }
 
@@ -93,7 +93,7 @@
     padding: 10px 15px;
   }
 
-  .signup-link {
+  .admin-link {
     top: 5px;
     left: 5px;
     font-size: 0.9em;
@@ -119,7 +119,7 @@
     padding: 8px 10px;
   }
 
-  .signup-link {
+  .admin-link {
     font-size: 0.8em;
   }
 }
@@ -140,7 +140,7 @@
     padding: 8px 10px;
   }
 
-  .signup-link {
+  .admin-link {
     font-size: 0.8em;
   }
 }
@@ -160,7 +160,7 @@
     padding: 10px 15px;
   }
 
-  .signup-link {
+  .admin-link {
     font-size: 0.9em;
   }
 }

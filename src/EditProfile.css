@@ -2,7 +2,7 @@
 .edit-profile {
   padding: 20px;
   text-align: center;
-  Background-color: grey;
+  background-color: grey;
 }
 
 .edit-profile h2 {
@@ -32,4 +32,141 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Extra Small Devices (320px and down) */
+@media only screen and (max-width: 320px) {
+  .edit-profile {
+    padding: 10px;
+  }
+
+  .edit-profile input {
+    width: 90%;
+  }
+
+  .edit-profile button {
+    padding: 8px 16px;
+  }
+}
+
+/* Small Devices (321px to 420px) */
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .edit-profile {
+    padding: 15px;
+  }
+
+  .edit-profile input {
+    width: 85%;
+  }
+
+  .edit-profile button {
+    padding: 9px 18px;
+  }
+}
+
+/* Small Devices (421px to 480px) */
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+  .edit-profile {
+    padding: 15px;
+  }
+
+  .edit-profile input {
+    width: 85%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Small Devices (481px to 500px) */
+@media only screen and (min-width: 481px) and (max-width: 500px) {
+  .edit-profile {
+    padding: 15px;
+  }
+
+  .edit-profile input {
+    width: 85%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Small Devices (501px to 540px) */
+@media only screen and (min-width: 501px) and (max-width: 540px) {
+  .edit-profile {
+    padding: 20px;
+  }
+
+  .edit-profile input {
+    width: 80%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Small Devices (541px to 600px) */
+@media only screen and (min-width: 541px) and (max-width: 600px) {
+  .edit-profile {
+    padding: 20px;
+  }
+
+  .edit-profile input {
+    width: 80%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Medium Devices (Tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .edit-profile {
+    padding: 20px;
+  }
+
+  .edit-profile input {
+    width: 80%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Large Devices (Desktops, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .edit-profile {
+    padding: 20px;
+  }
+
+  .edit-profile input {
+    width: 80%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .edit-profile {
+    padding: 20px;
+  }
+
+  .edit-profile input {
+    width: 80%;
+  }
+
+  .edit-profile button {
+    padding: 10px 20px;
+  }
 }

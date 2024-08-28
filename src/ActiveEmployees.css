@@ -1,118 +1,257 @@
-/* src/ActiveEmployees.css */
-.active-employees {
-  font-family: Arial, sans-serif;
+/* Existing styles */
+active-employees {
   padding: 20px;
-  background-color:grey;
+  background-color: grey;
 }
 
 header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  margin-bottom: 20px;
-}
-
-header button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 5px;
-}
-
-h2 {
-  text-align: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .employee-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 20px;
 }
 
 .employee-card {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px;
+  width: 150px;
   text-align: center;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .employee-card img {
-  width: 120px; 
-  height: 120px; 
-  object-fit: cover; 
+  width: 90%;
+  height: 150px;
   border-radius: 50%;
-  margin-bottom: 10px;
 }
 
 .employee-card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
 }
 
 .employee-card p {
-  font-size: 14px;
-  margin: 5px 0;
+  margin: 0;
 }
 
-/* Responsive styles */
-@media (max-width: 1024px) {
-  .active-employees {
-    padding: 15px;
-  }
+/* Media Queries for Responsiveness */
 
-  header button {
-    font-size: 14px;
-  }
-
-  .employee-card {
-    width: 220px;
-  }
-}
-
-@media (max-width: 768px) {
-  .active-employees {
-    padding: 10px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header button {
-    margin-bottom: 10px;
-    width: 100%;
-  }
-
+/* Extra Small Devices (320px and down) */
+@media only screen and (max-width: 320px) {
   .employee-list {
-    flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
   .employee-card {
-    width: 90%;
-    max-width: 300px;
-    margin-bottom: 15px;
+    width: 100px;
+  }
+
+  .employee-card img {
+    height: 100px;
+  }
+
+  .employee-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .employee-card p {
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 480px) {
-  header button {
-    font-size: 12px;
-    padding: 8px;
+/* Small Devices (320px to 420px) */
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .employee-list {
+    gap: 15px;
   }
 
   .employee-card {
-    width: 100%;
-    max-width: 280px;
+    width: 120px;
   }
+
+  .employee-card img {
+    height: 120px;
+  }
+
+  .employee-card h3 {
+    font-size: 1rem;
+  }
+
+  .employee-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Devices (421px to 480px) */
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+  .employee-list {
+    gap: 18px;
+  }
+
+  .employee-card {
+    width: 130px;
+  }
+
+  .employee-card img {
+    height: 130px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .employee-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (481px to 500px) */
+@media only screen and (min-width: 481px) and (max-width: 500px) {
+  .employee-list {
+    gap: 18px;
+  }
+
+  .employee-card {
+    width: 140px;
+  }
+
+  .employee-card img {
+    height: 140px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .employee-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (501px to 540px) */
+@media only screen and (min-width: 501px) and (max-width: 540px) {
+  .employee-list {
+    gap: 20px;
+  }
+
+  .employee-card {
+    width: 145px;
+  }
+
+  .employee-card img {
+    height: 145px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .employee-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (541px to 600px) */
+@media only screen and (min-width: 541px) and (max-width: 600px) {
+  .employee-list {
+    gap: 20px;
+  }
+
+  .employee-card {
+    width: 150px;
+  }
+
+  .employee-card img {
+    height: 150px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .employee-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium Devices (Tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .employee-list {
+    gap: 20px;
+  }
+
+  .employee-card {
+    width: 160px;
+  }
+
+  .employee-card img {
+    height: 160px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .employee-card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Devices (Desktops, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .employee-list {
+    gap: 25px;
+  }
+
+  .employee-card {
+    width: 170px;
+  }
+
+  .employee-card img {
+    height: 170px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .employee-card p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .employee-list {
+    gap: 30px;
+  }
+
+  .employee-card {
+    width: 180px;
+  }
+
+  .employee-card img {
+    height: 180px;
+  }
+
+  .employee-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .employee-card p {
+    font-size: 1.3rem;
+  }
+}
+/* Add styling for the logout button */
+header button {
+  background-color: #c1b7b6; /* Red color for logout button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #d32f2f;
 }

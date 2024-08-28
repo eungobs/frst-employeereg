@@ -1,7 +1,7 @@
-// src/Delete.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Delete.css';
 
+// Initial data for employees
 const initialEmployees = [
   { id: 1, name: 'Mpilo Mnaka', position: 'Manager', refNumber: 'EMP001' },
   { id: 2, name: 'Jane Smith', position: 'Sales Representative', refNumber: 'EMP002' },
@@ -27,8 +27,18 @@ const initialEmployees = [
 ];
 
 function Delete({ navigate, isAdmin, loginAsAdmin }) {
-  const [employees, setEmployees] = useState(initialEmployees);
+  // Load employees from local storage or use initial data
+  const [employees, setEmployees] = useState(() => {
+    const savedEmployees = localStorage.getItem('employees');
+    return savedEmployees ? JSON.parse(savedEmployees) : initialEmployees;
+  });
+
   const [adminName, setAdminName] = useState('');
+
+  // Save employees to local storage whenever they change
+  useEffect(() => {
+    localStorage.setItem('employees', JSON.stringify(employees));
+  }, [employees]);
 
   const handleLogin = () => {
     if (adminName.toLowerCase() === 'elizabeth ndzukule') {

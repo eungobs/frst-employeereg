@@ -86,3 +86,140 @@
   color: red;
   margin-top: 10px;
 }
+
+/* Media Queries for Responsiveness */
+
+/* Extra Small Devices (320px and down) */
+@media only screen and (max-width: 320px) {
+  .delete {
+    padding: 10px;
+  }
+
+  .employee-card {
+    max-width: 100%;
+  }
+
+  .login-overlay input {
+    width: 90%;
+  }
+}
+
+/* Small Devices (321px to 420px) */
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .delete {
+    padding: 15px;
+  }
+
+  .employee-card {
+    max-width: 100%;
+  }
+
+  .login-overlay input {
+    width: 85%;
+  }
+}
+
+/* Small Devices (421px to 480px) */
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+  .delete {
+    padding: 15px;
+  }
+
+  .employee-card {
+    max-width: 100%;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Small Devices (481px to 500px) */
+@media only screen and (min-width: 481px) and (max-width: 500px) {
+  .delete {
+    padding: 15px;
+  }
+
+  .employee-card {
+    max-width: 100%;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Small Devices (501px to 540px) */
+@media only screen and (min-width: 501px) and (max-width: 540px) {
+  .delete {
+    padding: 20px;
+  }
+
+  .employee-card {
+    max-width: 100%;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Small Devices (541px to 600px) */
+@media only screen and (min-width: 541px) and (max-width: 600px) {
+  .delete {
+    padding: 20px;
+  }
+
+  .employee-card {
+    max-width: 300px;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Medium Devices (Tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .delete {
+    padding: 20px;
+  }
+
+  .employee-card {
+    max-width: 300px;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Large Devices (Desktops, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .delete {
+    padding: 20px;
+  }
+
+  .employee-card {
+    max-width: 300px;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .delete {
+    padding: 20px;
+  }
+
+  .employee-card {
+    max-width: 300px;
+  }
+
+  .login-overlay input {
+    width: 80%;
+  }
+}

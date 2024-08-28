@@ -1,56 +1,162 @@
 /* src/AddEmployee.css */
 .add-employee {
   padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: gray;
+  text-align: center;
 }
 
 .add-employee h2 {
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .add-employee form {
   display: flex;
   flex-direction: column;
-}
-
-.add-employee form div {
-  margin-bottom: 15px;
-}
-
-.add-employee label {
-  margin-bottom: 5px;
+  align-items: center;
 }
 
 .add-employee input {
+  margin: 10px;
   padding: 10px;
-  font-size: 16px;
-  width: 100%;
+  width: 80%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.add-employee input[type="file"] {
-  padding: 3px;
+.add-employee button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.error {
-  color: red;
-  margin-bottom: 15px;
-}
+/* Media Queries for Responsiveness */
 
-@media (max-width: 600px) {
-  .add-employee {
-    padding: 10px;
-  }
-
+/* Extra Small Devices (320px and down) */
+@media only screen and (max-width: 320px) {
   .add-employee input {
-    font-size: 14px;
+    width: 90%;
     padding: 8px;
   }
 
   .add-employee button {
-    font-size: 14px;
-    padding: 8px;
+    width: 90%;
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }
 
+/* Small Devices (320px to 420px) */
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .add-employee input {
+    width: 85%;
+    padding: 8px;
+  }
+
+  .add-employee button {
+    width: 85%;
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Devices (421px to 480px) */
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+  .add-employee input {
+    width: 80%;
+    padding: 9px;
+  }
+
+  .add-employee button {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (481px to 500px) */
+@media only screen and (min-width: 481px) and (max-width: 500px) {
+  .add-employee input {
+    width: 75%;
+    padding: 9px;
+  }
+
+  .add-employee button {
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (501px to 540px) */
+@media only screen and (min-width: 501px) and (max-width: 540px) {
+  .add-employee input {
+    width: 70%;
+    padding: 10px;
+  }
+
+  .add-employee button {
+    width: 70%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (541px to 600px) */
+@media only screen and (min-width: 541px) and (max-width: 600px) {
+  .add-employee input {
+    width: 65%;
+    padding: 10px;
+  }
+
+  .add-employee button {
+    width: 65%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Medium Devices (Tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .add-employee input {
+    width: 60%;
+    padding: 10px;
+  }
+
+  .add-employee button {
+    width: 60%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Large Devices (Desktops, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .add-employee input {
+    width: 55%;
+    padding: 10px;
+  }
+
+  .add-employee button {
+    width: 55%;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .add-employee input {
+    width: 50%;
+    padding: 12px;
+  }
+
+  .add-employee button {
+    width: 50%;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+}
