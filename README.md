@@ -2,11 +2,11 @@
 
 Overview
 
-The WATT ELECTRICAL Company Registration App is designed to manage employee records for the company. This application allows the admin to securely log in and perform CRUD operations on employee data. It provides insights into active employees, deactivated employees, and those who have moved to other branches within the company.
+The Teekga ELECTRICAL Company Registration App is designed to manage employee records for the company. This application allows the admin to securely log in and perform CRUD operations on employee data. It provides insights into active employees, deactivated employees, and those who have moved to other branches within the company.
 
 Features
 
-Admin Access Only: (username:Elizabeth Ndzukule; password:Tebogom) Only the admin can log in, add, update, and delete employee records.
+Admin Access Only:Only the admin can log in, add, update, and delete employee records. To delete an employee use (elizabeth ndzukule) to login.
 Employee Status: View active employees, deactivated employees, and those who have moved to other branches.
 Responsive Design: The app is fully responsive, ensuring a seamless experience across all devices.
 Built-in Security: Designed with a focus on secure access and management.
@@ -31,7 +31,7 @@ Additional Information
 
 This project was completed in 5 days, showcasing rapid development and deployment capabilities. The app was developed using VSCode. You can check the screenshots of the app in the public folder. The sketch of the app was drawn using Figma.
 
-![Untitled (4)](https://github.com/user-attachments/assets/13898925-8664-44fa-8b75-5f4e72f60874)
+
 
 
 
