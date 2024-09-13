@@ -40,6 +40,11 @@ function ActiveEmployees({ navigate }) {
     navigate('delete'); // Navigate to delete page
   };
 
+  const handleEdit = (employeeId) => {
+    // Navigate to the edit-profile page and pass the employeeId
+    navigate('edit-profile', { employeeId });
+  };
+
   return (
     <div className="active-employees">
       <header>
@@ -57,6 +62,7 @@ function ActiveEmployees({ navigate }) {
             <h3>{employee.name}</h3>
             <p>{employee.position}</p>
             <p>Ref Number: {employee.refNumber}</p>
+            <button onClick={() => handleEdit(employee.id)}>Edit</button> {/* Edit button */}
           </div>
         ))}
       </div>
@@ -65,3 +71,4 @@ function ActiveEmployees({ navigate }) {
 }
 
 export default ActiveEmployees;
+
