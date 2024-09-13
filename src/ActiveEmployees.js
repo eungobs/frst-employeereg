@@ -1,68 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import './ActiveEmployees.css';
 
-// Default employee data
-const defaultEmployees = [
-  { id: 1, name: 'Mpilo Mnaka', position: 'Manager', imageUrl: 'https://img.freepik.com/free-photo/black-man-happy-expression_155003-10043.jpg?t=st=1721423659~exp=1721427259~hmac=529dde7c3e1da8e51c3cf608ea8a9b02fe7748adc012d07e3cd28017918ce24e&w=360', refNumber: 'EMP001' },
-  { id: 2, name: 'Jane Smith', position: 'Sales Representative', imageUrl: 'https://img.freepik.com/free-photo/confident-african-businesswoman-smiling-closeup-portrait-jobs-career-campaign_53876-129412.jpg?t=st=1721469104~exp=1721472704~hmac=1e91cf0c317b712211de3472bdc9631675fe836bbb9c3b39db04316827f1f9be&w=826', refNumber: 'EMP002' },
-  { id: 3, name: 'Amelia Johnson', position: 'Technician', imageUrl: 'https://as1.ftcdn.net/v2/jpg/02/99/03/56/1000_F_299035676_iRQZfxrwzPFdRVRhCGAwyByXBlgNktpI.jpg', refNumber: 'EMP003' },
-  { id: 4, name: 'Tomas Dali', position: 'Cashier', imageUrl: 'https://img.freepik.com/free-photo/happy-young-african-american-man-smiling-cheerfully-showing-his-perfect-straight-white-teeth-posing-isolated_273609-431.jpg?t=st=1721469704~exp=1721473304~hmac=343928711927a3ce0222d98511d48b60b3f2ba51f83dd93df9dfa5a322be8101&w=826', refNumber: 'EMP004' },
-  { id: 5, name: 'Michael Brown', position: 'Electrician', imageUrl: 'https://img.freepik.com/free-photo/close-up-shot-handsome-african-student-with-beard-dressed-denim-shirt-smiling-happily-showing-his-white-teeth-having-joyful-contented-look_273609-1853.jpg?t=st=1721469803~exp=1721473403~hmac=4bdcd63b8e02e13e4e2b155fb9f5414ad0cbcda1bc547e798239bdfa1a60f9d5&w=826', refNumber: 'EMP005' },
-  { id: 6, name: 'Linda Witsona', position: 'Customer Service', imageUrl: 'https://img.freepik.com/free-photo/smiling-african-american-man-looking_74855-5149.jpg?t=st=1721470078~exp=1721473678~hmac=dae0b367238a43a3022a9252999200561548e3b52f5bd8bf517de8a2c84c2a40&w=360', refNumber: 'EMP006' },
-  { id: 7, name: 'David Leetso', position: 'Stock Manager', imageUrl: 'https://img.freepik.com/free-photo/portrait-person-daily-life-new-york-city_23-2150820008.jpg?t=st=1721472166~exp=1721475766~hmac=7ce7d064c214a9f6e973d8706389c9304aee53119403f34a09d8ab1255ab6b28&w=360', refNumber: 'EMP007' },
-  { id: 8, name: 'Andrew Majola', position: 'Accountant', imageUrl: 'https://img.freepik.com/free-photo/close-up-smiley-man-with-glasses_23-2149009406.jpg?t=st=1721468609~exp=1721472209~hmac=0bfa066a7f85a349ffe793e22f631e401428e5c13b96860084514cdcb74737a0&w=826', refNumber: 'EMP008' },
-  { id: 9, name: 'James Mohammad', position: 'Security', imageUrl: 'https://img.freepik.com/free-photo/happy-african-american-young-man-colorful-shirt-wearing-glasses-looking-camera-smiling-cheerfully_141793-108881.jpg?t=st=1721472783~exp=1721476383~hmac=7eba14da01a978b63c4d225527c06472452219e274e9545e99c8ec147473012c&w=826', refNumber: 'EMP009' },
-  { id: 10, name: 'Patricia Nukeri', position: 'Cleaner', imageUrl: 'https://img.freepik.com/free-photo/young-african-american-woman-isolated-yellow-studio-background-facial-expression-beautiful-female-half-length-portrait-concept-human-emotions-facial-expression-standing-crossing-hands_155003-25191.jpg?t=st=1721472348~exp=1721475948~hmac=5b2a80f9423b51c51458bdd5d6980f13f2c75ab40c5a3675bfecad2bc3260e55&w=826', refNumber: 'EMP010' },
-];
-
 function ActiveEmployees({ navigate }) {
+  // State to hold the list of employees
   const [employees, setEmployees] = useState([]);
 
+  // useEffect hook to load employee data from local storage when the component mounts
   useEffect(() => {
-    // Retrieve employees from local storage
     const storedEmployees = localStorage.getItem('employees');
     if (storedEmployees) {
-      setEmployees(JSON.parse(storedEmployees));
-    } else {
-      // If no employees are found in local storage, use default data
-      setEmployees(defaultEmployees);
-      localStorage.setItem('employees', JSON.stringify(defaultEmployees));
+      const parsedEmployees = JSON.parse(storedEmployees);
+      setEmployees(parsedEmployees);
     }
-  }, []);
+  }, []); // Empty dependency array ensures this runs only on component mount
 
+  // Handler function to log out the user
   const handleLogout = () => {
-    // Clear authentication data or handle logout logic here
     alert('Logged out successfully!');
-    navigate('login'); // Redirect to login page
+    navigate('login'); // Navigate to the login page
   };
 
+  // Handler function to navigate to the delete page
   const handleDelete = () => {
-    navigate('delete'); // Navigate to delete page
+    navigate('delete');
   };
 
+  // Handler function to navigate to the edit profile page for a specific employee
   const handleEdit = (employeeId) => {
-    // Navigate to the edit-profile page and pass the employeeId
     navigate('edit-profile', { employeeId });
   };
 
   return (
     <div className="active-employees">
+      {/* Header section with navigation buttons */}
       <header>
-        <button onClick={() => navigate('add-employee')}>Add</button>
-        <button onClick={() => navigate('edit-profile')}>Edit</button>
-        <button onClick={handleDelete}>Delete</button> {/* Navigate to delete page */}
-        <button onClick={() => navigate('personnel')}>Personnel</button>
-        <button onClick={handleLogout}>Logout</button> {/* Logout button */}
+        <button onClick={() => navigate('add-employee')}>Add</button> {/* Navigate to the add employee page */}
+        <button onClick={handleDelete}>Delete</button> {/* Navigate to the delete page */}
+        <button onClick={() => navigate('personnel')}>Personnel</button> {/* Navigate to the personnel page */}
+        <button onClick={handleLogout}>Logout</button> {/* Log out and navigate to the login page */}
       </header>
+
+      {/* Main heading for the active employees page */}
       <h2>Active Employees</h2>
+
+      {/* Container for displaying the list of employees */}
       <div className="employee-list">
-        {employees.map(employee => (
-          <div key={employee.id} className="employee-card">
-            <img src={employee.imageUrl} alt={`${employee.name}`} />
-            <h3>{employee.name}</h3>
-            <p>{employee.position}</p>
-            <p>Ref Number: {employee.refNumber}</p>
-            <button onClick={() => handleEdit(employee.id)}>Edit</button> {/* Edit button */}
+        {employees.map((employee, index) => (
+          <div key={index} className="employee-card">
+            {/* Display employee image with fallback if not available */}
+            <img
+              src={employee.image || 'default-image-url-here'} // Fallback image if employee.image is not available
+              alt={`${employee.name}`} // Alt text for the image
+              style={{ width: '100px', height: '100px' }} // Styling for the image size
+            />
+            {/* Display employee details */}
+            <h3>{employee.name}</h3> {/* Employee name */}
+            <p>Position: {employee.position}</p> {/* Employee position */}
+            <p>Email: {employee.email || 'N/A'}</p> {/* Display email, show 'N/A' if not available */}
+            <p>ID Number: {employee.idNumber || 'N/A'}</p> {/* Display ID number, show 'N/A' if not available */}
+            <p>Phone Number: {employee.phoneNumber || 'N/A'}</p> {/* Display phone number, show 'N/A' if not available */}
+            <p>Ref Number: {employee.refNumber}</p> {/* Employee reference number */}
+            <button onClick={() => handleEdit(employee.id)}>Edit</button> {/* Navigate to the edit profile page for the employee */}
           </div>
         ))}
       </div>
@@ -71,4 +69,3 @@ function ActiveEmployees({ navigate }) {
 }
 
 export default ActiveEmployees;
-

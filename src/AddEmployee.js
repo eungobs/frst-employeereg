@@ -2,72 +2,110 @@ import React, { useState } from 'react';
 import './AddEmployee.css';
 
 function AddEmployee({ navigate }) {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    position: '',
-    email: '',
-    mobileNumber: '',
-    address: '',
-    gender: '',
-    id: '',
-    employeeNumber: '',
-    startDate: '',
-    maritalStatus: '',
-    nextOfKin: '',
-    nextOfKinContact: '',
-  });
-  const [image, setImage] = useState(null);
+  // State variables for storing form input values
+  const [name, setName] = useState(''); // Employee's name
+  const [position, setPosition] = useState(''); // Employee's position
+  const [image, setImage] = useState(''); // URL of the employee's image
+  const [refNumber, setRefNumber] = useState(''); // Employee's reference number
+  const [email, setEmail] = useState(''); // Employee's email address
+  const [idNumber, setIdNumber] = useState(''); // Employee's ID number
+  const [phoneNumber, setPhoneNumber] = useState(''); // Employee's phone number
+  // eslint-disable-next-line no-unused-vars
+  const [imageFile, setImageFile] = useState(null); // File object for the image, currently not used
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  // Function to handle image file selection and preview
+  const handleImageChange = (event) => {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result); // Set the image URL for preview
+        setImageFile(file); // Store the file object (not used in current code)
+      };
+      reader.readAsDataURL(file); // Read the file as a data URL
+    }
   };
 
-  const handleImageChange = (e) => {
-    setImage(URL.createObjectURL(e.target.files[0]));
-  };
+  // Function to handle the submission of the new employee
+  const handleAddEmployee = () => {
+    // Validate ID number length
+    if (idNumber.length > 13) {
+      alert('ID number must not exceed 13 digits');
+      return;
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const employeeData = {
-      ...formData,
-      imageUrl: image || 'https://via.placeholder.com/150', // Fallback image if no image is uploaded
+    // Validate phone number length
+    if (phoneNumber.length > 10) {
+      alert('Phone number must not exceed 10 digits');
+      return;
+    }
+
+    // Create a new employee object with current state values
+    const newEmployee = {
+      id: Date.now(), // Generate a unique ID using current timestamp
+      name,
+      position,
+      image,
+      refNumber,
+      email,
+      idNumber,
+      phoneNumber,
     };
 
-    // Retrieve existing employees from local storage
-    const existingEmployees = JSON.parse(localStorage.getItem('employees')) || [];
-    
-    // Add new employee data
-    existingEmployees.push(employeeData);
-    
-    // Save updated employee list to local storage
-    localStorage.setItem('employees', JSON.stringify(existingEmployees));
+    // Retrieve the existing employees from local storage
+    const storedEmployees = JSON.parse(localStorage.getItem('employees')) || [];
+    // Add the new employee to the existing list
+    const updatedEmployees = [...storedEmployees, newEmployee];
+    // Save the updated employee list back to local storage
+    localStorage.setItem('employees', JSON.stringify(updatedEmployees));
 
-    alert('Employee added successfully');
+    // Navigate back to the active employees page
     navigate('active-employees');
+  };
+
+  // Function to handle navigation back to the active employees page
+  const handleBack = () => {
+    navigate('active-employees'); // Navigate to the active employees page
   };
 
   return (
     <div className="add-employee">
-      <h2>Add a New Employee</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="fullName" placeholder="Full name" value={formData.fullName} onChange={handleChange} required />
-        <input type="text" name="position" placeholder="Position" value={formData.position} onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-        <input type="text" name="mobileNumber" placeholder="Mobile number" value={formData.mobileNumber} onChange={handleChange} required />
-        <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} required />
-        <input type="text" name="gender" placeholder="Gender" value={formData.gender} onChange={handleChange} required />
-        <input type="text" name="id" placeholder="ID (SAP Number)" value={formData.id} onChange={handleChange} required />
-        <input type="text" name="employeeNumber" placeholder="Employee number" value={formData.employeeNumber} onChange={handleChange} required />
-        <input type="date" name="startDate" placeholder="Start date" value={formData.startDate} onChange={handleChange} required />
-        <input type="text" name="maritalStatus" placeholder="Marital status" value={formData.maritalStatus} onChange={handleChange} required />
-        <input type="text" name="nextOfKin" placeholder="Next of kin" value={formData.nextOfKin} onChange={handleChange} required />
-        <input type="text" name="nextOfKinContact" placeholder="Next of kin contact" value={formData.nextOfKinContact} onChange={handleChange} required />
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        {image && <img src={image} alt="Employee" className="employee-image" />}
-        <button type="submit">Save</button>
+      <h2>Add Employee</h2>
+      <form>
+        {/* Form fields for employee details */}
+        <label>
+          Name:
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        </label>
+        <label>
+          Position:
+          <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} />
+        </label>
+        <label>
+          Image Upload:
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+        </label>
+        <label>
+          Reference Number:
+          <input type="text" value={refNumber} onChange={(e) => setRefNumber(e.target.value)} />
+        </label>
+        <label>
+          Email Address:
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        <label>
+          ID Number:
+          <input type="text" value={idNumber} onChange={(e) => setIdNumber(e.target.value)} />
+        </label>
+        <label>
+          Phone Number:
+          <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+        </label>
+        {/* Button to trigger employee addition */}
+        <button type="button" onClick={handleAddEmployee}>Add Employee</button>
+        {/* Button to navigate back to the active employees page */}
+        <button type="button" onClick={handleBack}>Back to Active Employees</button>
       </form>
-      <button onClick={() => navigate('active-employees')}>Back</button>
     </div>
   );
 }

@@ -41,14 +41,21 @@ On the landing page, click the Admin button to register as a new admin.
 Once registered, log in to access the employee management system.
 Active Employees Page:
 
-After logging in, you will be navigated to the active employees page, where you can view all current employees.
-On the top-left corner, you will find the following action buttons:
-Add: Add a new employee.
-Edit: Edit the details of an existing employee.
-Delete: Delete an employee from the system.
-Personnel: View employees who have resigned, transferred, or been promoted to other branches or hubs.
-Logout: Securely log out of the system.
-Managing Employees:
+ActiveEmployees Page Overview
+Description: After logging in, users will be directed to the ActiveEmployees page where they can view all current employees. The page includes several action buttons and individual employee cards for managing employee records.
+
+Layout and Features
+Top-Left Action Buttons:
+
+Add: Opens a form or modal for adding a new employee to the system.
+Edit: Allows editing of employee details. (Note: This button will be located inside each employee's card.)
+Delete: Deletes an employee from the system.
+Personnel: Provides access to view employees who have resigned, transferred, or been promoted to other branches or hubs.
+Logout: Logs the user out of the system securely.
+Employee Cards:
+
+Each card represents an individual employee with their details.
+Edit Button: This button is embedded within each employee's card, allowing users to edit the details specific to that employee.
 
 To edit an employee's details, click the Edit button and update the necessary information.
 To delete an employee, click the Delete button and confirm the action.

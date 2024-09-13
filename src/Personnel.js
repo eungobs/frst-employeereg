@@ -4,12 +4,16 @@ import './Personnel.css';
 function Personnel({ navigate }) {
   return (
     <div className="personnel">
+      {/* Background video playing in a loop */}
       <video autoPlay loop muted className="background-video">
         <source src="https://videocdn.cdnpk.net/videos/9bd83cd0-f80e-4355-8527-606858b07643/horizontal/previews/clear/large.mp4?token=exp=1721479253~hmac=cf005f8c8b9c9d1195a5963fe6aee01a471b2f7c5c9f6d9a24ca5955220c8aa2" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       <div className="content">
         <h2>Company Personnel</h2>
+
+        {/* List of personnel */}
         <div className="personnel-list">
           <div className="person moved">Munny Mpapi (female) - Marketing Director - moved to Pretoria branch - Ref Number: EMP011</div>
           <div className="person terminated">Palane Pilot (male) - Web Designer - Contract Terminated - Ref Number: EMP012</div>
@@ -22,8 +26,15 @@ function Personnel({ navigate }) {
           <div className="person terminated">Michael Ndlovu (male) - Security - Resigned - Ref Number: EMP019</div>
           <div className="person terminated">Anna Nkosi (female) - Technician - Contract Terminated - Ref Number: EMP020</div>
         </div>
+
+        {/* Back button to navigate to the active employees page */}
         <button onClick={() => navigate('active-employees')}>Back</button>
       </div>
+
+      {/* Footer with company policy message */}
+      <footer className="footer">
+        <p>As per company policy, this data/information must not be edited or deleted.</p>
+      </footer>
     </div>
   );
 }
