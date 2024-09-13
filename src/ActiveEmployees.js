@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ActiveEmployees.css';
 
-const employees = [
+// Default employee data
+const defaultEmployees = [
   { id: 1, name: 'Mpilo Mnaka', position: 'Manager', imageUrl: 'https://img.freepik.com/free-photo/black-man-happy-expression_155003-10043.jpg?t=st=1721423659~exp=1721427259~hmac=529dde7c3e1da8e51c3cf608ea8a9b02fe7748adc012d07e3cd28017918ce24e&w=360', refNumber: 'EMP001' },
   { id: 2, name: 'Jane Smith', position: 'Sales Representative', imageUrl: 'https://img.freepik.com/free-photo/confident-african-businesswoman-smiling-closeup-portrait-jobs-career-campaign_53876-129412.jpg?t=st=1721469104~exp=1721472704~hmac=1e91cf0c317b712211de3472bdc9631675fe836bbb9c3b39db04316827f1f9be&w=826', refNumber: 'EMP002' },
   { id: 3, name: 'Amelia Johnson', position: 'Technician', imageUrl: 'https://as1.ftcdn.net/v2/jpg/02/99/03/56/1000_F_299035676_iRQZfxrwzPFdRVRhCGAwyByXBlgNktpI.jpg', refNumber: 'EMP003' },
@@ -15,6 +16,20 @@ const employees = [
 ];
 
 function ActiveEmployees({ navigate }) {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    // Retrieve employees from local storage
+    const storedEmployees = localStorage.getItem('employees');
+    if (storedEmployees) {
+      setEmployees(JSON.parse(storedEmployees));
+    } else {
+      // If no employees are found in local storage, use default data
+      setEmployees(defaultEmployees);
+      localStorage.setItem('employees', JSON.stringify(defaultEmployees));
+    }
+  }, []);
+
   const handleLogout = () => {
     // Clear authentication data or handle logout logic here
     alert('Logged out successfully!');
@@ -50,4 +65,3 @@ function ActiveEmployees({ navigate }) {
 }
 
 export default ActiveEmployees;
-
