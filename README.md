@@ -8,7 +8,9 @@ The Teekga ELECTRICAL Company Registration App is designed to manage employee re
 Features
 Admin Access Only:
 Only the admin can log in to the app and perform actions like adding, updating, and deleting employee records. To delete an employee, log in using the admin credentials:
-Username: Elizabeth Ndzukule.
+Username: eungobs@gmail.com
+Password: 000000
+For Deleting use:Elizabeth Ndzukule to login a Delete page.
 
 Employee Status:
 View employees by their status, including active employees, deactivated employees, and those who have moved to other branches.

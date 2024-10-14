@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Login from './Login';
 import ChangePassword from './ChangePassword'; 
 import ForgotPassword from './ForgotPassword';
-import Admin from './Admin'; // Replaced Signup with Admin
 import ActiveEmployees from './ActiveEmployees';
 import AddEmployee from './AddEmployee';
 import EditProfile from './EditProfile';
@@ -33,8 +32,7 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'admin': // Replaced 'signup' with 'admin'
-        return <Admin navigate={navigate} />;
+     
       case 'login':
         return <Login navigate={navigate} loginAsAdmin={loginAsAdmin} />;
       case 'active-employees':
