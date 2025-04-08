@@ -5,6 +5,9 @@
 ## What is This App About?
 The **Employee Registration App** is a tool created for the **Teekga ELECTRICAL Company** to help manage information about employees in a very effective way. Think of it as a digital filing cabinet where you can keep track of your employees' information securely.
 
+Demo
+You can see a live demo of the application at: https://frst-employeereg.vercel.app
+
 ### How Does It Work?
 The app allows an admin (the person in charge) to log in securely and perform different tasks related to employee records. These tasks are often called CRUD operations, which stands for:
 
